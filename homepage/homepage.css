@@ -1,0 +1,349 @@
+
+body{
+    margin: 0 auto;
+    max-width: 1920px;
+    text-align: center;
+}
+
+/* ------------------------------------------------------ */
+/* 导航栏 */
+.nav-menu{
+    width: 100%;
+    position: fixed;
+    background-color: white;
+    top: 0;
+    z-index: 99; /* 用来防止被relative元素压住 */
+    box-shadow: 5px 2px 10px 2px gray;
+}
+.nav-left-logo{
+    float: left;
+    display: block;
+    padding: 10px 15% 10px;
+}
+.nav-left-logo a{
+    float: left;
+    color: #3084ce;
+    font-size: 20px;
+    font-weight: bolder;
+    letter-spacing: 2px;
+    text-decoration: none;
+    padding: 4px 0px;
+}
+
+/* 搜索栏 */
+.nav-search-bar {
+    background: rgb(241, 241, 245);
+    height: 20px;
+    border-radius: 40px;
+    padding: 8px;
+    position: absolute;
+    display:inline-block;
+    margin-left: 30px;
+}
+
+.nav-search-btn {
+    color: #2c7fc9;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border:0px;
+    cursor: pointer;
+    background: rgb(241, 241, 245);
+
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.6s;
+    text-decoration: none;
+}
+
+.nav-search-txt {
+    border: none;
+    background: none;
+    outline: none;
+    float: left;
+    padding: 0;
+    width: 0px;
+    color: rgb(123, 128, 128);
+    font-size: 13px;
+    transition: 0.7s;
+    line-height: 20px;
+}
+
+.nav-search-bar:hover>.nav-search-txt{
+    width: 180px;
+    padding: 0 6px;
+}
+
+/* 导航栏右边菜单 */
+.nav-right-menu{
+    display: block;
+    float: right;
+    height: 55px;
+    
+}
+.nav-right-menu ul{
+    list-style-type: none;
+    padding-right: 30px;
+}
+.nav-right-menu li{
+    float: left;
+    padding-left: 15px;
+    font-family: FangSONG;
+}
+.nav-right-menu ul li a{
+    color: black;
+    text-decoration: none;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+}
+.nav-right-menu ul li a:hover{
+    color: #4b88bf;
+}
+
+
+/* 大贴图展示个人页面 */
+.big-pic{
+    margin: 0 auto;
+    background-image: url(img/waterSoldier.png);
+    background-size: 100% 100%; /* 这条可以令背景图片铺满页面*/
+    height: 800px;
+    background-repeat: no-repeat;
+}
+
+.pic-flex{
+    /* 保持打字的时候保持居中 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pic-text{
+    position: relative;
+    padding-top: 7%;
+    color: white;
+    font-size: 80px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 35px;
+    /* 动画设置 */
+    white-space: nowrap;
+    animation: content-slide-in 2s steps(15) forwards;
+    overflow: hidden;
+}
+/* .pic-text::after{
+    content: '';
+    position:absolute;
+    right: 0;
+    height: 40px;
+    animation: sprinkle-bling .5s steps(2) infinite;
+} */
+@keyframes content-slide-in {
+    from {
+      width: 0;
+      height: 50px;
+    }
+    to {
+      width: 10ch;
+      height: 350px;
+    }
+  }
+  
+  /* @keyframes sprinkle-bling {
+    from {
+      border-right: 1px solid transparent;
+    }
+    to {
+      border-right: 1px solid #000;
+    }
+  } */
+
+.pic-button{
+    text-align: center;
+}
+.pic-button a{
+    text-decoration: none;
+    width: 150px; 
+    height: 50px;
+    text-transform: uppercase;
+    padding: 15px;
+    font-size: 18px; /* 修改按钮文字的大小 */
+    /* 设置按钮里面字体颜色 */
+    color: #FFFFFF;
+    line-height: 50px;
+    border-radius: 30px; /* 将按钮的左右边框设置为圆弧 */
+    background-color: #2c7fc9;
+    box-shadow: 0px 0px 10px 1px;
+    /* 按钮渐变 */
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+.pic-button a:hover{
+    background-color: #2477c0;
+}
+
+
+/* ---------------------------------------------------- */
+/* 自我介绍部分 */
+.introduction,.education,.skill,.contact{
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 100px;
+    /* 解决坍缩 */
+    overflow: hidden;
+}
+
+.introduction h2,.education h2,.skill h2,.contact h2{
+    text-align: center;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgb(206, 200, 200);
+}
+.intro-content{
+    height: 450px;
+    width: 40%;
+    float: left;
+    line-height: 30px;
+}
+.intro-content p{
+    color: gray;
+}
+.intro-box{
+    text-align: left;
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+.intro-box div{
+    flex-basis: 50%;
+}
+.intro-box div span{
+    color: #2477c0;
+    font-weight: bold;
+}
+/* 自我介绍图片部分 */
+.intro-pic{
+    float: right;
+    width: 60%;
+}
+.intro-pic img{
+    margin: 0 auto;
+    margin-top: 10px;
+    box-shadow: 0px 0px 13px 3px #3989ce;
+    cursor: pointer;
+    -webkit-transition-duration: 0.6s;
+    transition-duration: 0.6s;
+}
+.intro-pic img:hover{
+    width: 570px;
+    box-shadow: 0px 0px 20px 4px #3989ce;
+}
+
+.about-list-icon{
+    height: 40px;
+    text-align: center;
+}
+.about-list-icon ul{
+    padding-left: 35%;
+}
+.about-list-icon ul li{
+    list-style-type: none;
+    float: left;
+    padding:0px 15px 0px;
+}
+.about-list-icon ul li a{
+    color: black;
+}
+.about-list-icon ul li a:hover{
+    color: #4b88bf;
+}
+
+/* ---------------------------------------- */
+/* education部分 */
+.edu-content1{
+    width: 25%;
+    float: left;
+}
+.edu-c1 i{
+    color: #4b88bf;
+    padding-bottom: 30px;
+}
+.edu-c1 p{
+    width: 90%;
+}
+.edu-c1 span{
+    display: inline-block;
+    height: 1px;
+    width: 90%;
+    background-color: gray;
+}
+
+
+/* ---------------------------------------- */
+/* skills部分 */
+
+.skill-gallery{
+    display: grid;
+    /* 定制宽和高 */
+    grid-template-columns: 30% 30% 30%;
+    grid-template-rows: 180px 180px;
+    grid-column-gap: 5%;
+    grid-row-gap: 20px;
+    padding: 10px;
+}
+.skill-pic{
+    position: relative;
+    box-shadow: 0px 0px 5px 1px;
+}
+.skill-origin-pic{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: #2477c0;
+    opacity: 1;
+    transition:opacity 0.6s ease-in-out;
+}
+.skill-origin-pic:hover{
+    opacity: 0;
+}
+.skill-origin-pic img{
+    width: 100%;
+    height: 100%;
+}
+.skill-hidden-pic{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #9cc8ee;
+    opacity: 0.1;
+    transition:opacity 0.6s ease-in-out;
+}
+.skill-hidden-pic:hover{
+    opacity: 0.9;
+    cursor: pointer;
+}
+.skill-hidden-pic h2{
+    padding: 55px;
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+}
+.skill-hidden-pic i{
+    color: white;
+    font-size: 60px;
+    padding: 55px;
+}
+
+
+/* contact部分，上面中间还有可以加其他东西 */
+.contact{
+    background-color: #f9fbfd;
+}
+
+/* 脚部，footer */
+.footer{
+    text-align: center;
+    color: gray;
+    padding: 20px;
+}
